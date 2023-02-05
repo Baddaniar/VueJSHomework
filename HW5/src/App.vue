@@ -1,17 +1,34 @@
 <script>
-import Post from './Post.vue'
+import DiagramData from "./DiagramData.vue"
+import Diagram from "./Diagram.vue"
     export default {
         components:{
-            Post
+            DiagramData,
+            Diagram
         },
         data() {
             return {
-                amount: 1
+                allData: [
+                    {
+                        catName: "cars",
+                        catPercent: 75
+                    },
+                    {
+                        catName: "toys",
+                        catPercent: 50
+                    },
+                    {
+                        catName: "weapon",
+                        catPercent: 100
+                    }
+                ]
             }
         },
         methods: {
-            addPost(){
-                this.amount++
+            addData(data){
+                console.log(data)
+                this.allData.push(data)
+                console.log(this.allData)
             }
         }
 
@@ -19,8 +36,8 @@ import Post from './Post.vue'
 </script>
 
 <template>
-    <input type="button" value="Add post" @click="addPost">
-    <Post v-for="n in amount" :key="n"/>
+    <DiagramData @addData="addData"/>
+    <Diagram :allData="allData"/>
 </template>
 
 <style scoped>

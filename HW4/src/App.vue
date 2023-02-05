@@ -1,12 +1,8 @@
 <script>
-import Post from './Post.vue'
     export default {
-        components:{
-            Post
-        },
         data() {
             return {
-                amount: 1
+                
             }
         },
         methods: {
@@ -19,8 +15,8 @@ import Post from './Post.vue'
 </script>
 
 <template>
-    <input type="button" value="Add post" @click="addPost">
-    <Post v-for="n in amount" :key="n"/>
+    <img src="" alt="">
+    <p>asdasd</p>
 </template>
 
 <style scoped>
